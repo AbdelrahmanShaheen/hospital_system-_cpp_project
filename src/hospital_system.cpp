@@ -59,14 +59,7 @@ void hospital_system::print_patients() {
         if (specializations[spec].queue.size()) {
             cout << "there are " << specializations[spec].queue.size() << " patients in specialization " << spec
                  << endl;
-            for (int patient = 0; patient < specializations[spec].queue.size(); patient++) {
-                cout << specializations[spec].queue[patient].first << " ";
-                if (specializations[spec].queue[patient].second == 0) {
-                    cout << "regular\n";
-                } else {
-                    cout << "urgent\n";
-                }
-            }
+            specializations[spec].print();
         }
     }
 }
